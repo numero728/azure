@@ -2,11 +2,10 @@ from selenium import webdriver as wd
 import platform
 import time
 import urllib
+import os
 
-driver=0
-conn=0
 try:
-    driver = wd.Chrome('./chromedriver.exe')
+    driver = wd.Chrome('azure/scrap/chromedriver.exe')
     keyword = urllib.parse.quote('주식') 
     target_site = f'https://www.youtube.com/results?search_query={keyword}&sp=CAMSBAgCEAE%253D'
     driver.get( target_site )
@@ -56,9 +55,13 @@ try:
 except Exception as e:
     print(e)
 finally:
-    conn.close()
-    driver.close()
-    driver.quit()
+    try:
+        conn.close()
+    finally:
+        try:
+            driver.close()
+        finally:
+            driver.quit()
 
 
 
