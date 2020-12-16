@@ -30,7 +30,7 @@ df = pd.DataFrame(results)
 engine = create_engine(db_url, encoding = 'utf8')
 try:
     conn = engine.connect()
-    df.to_sql(name = 'main_news2', con = conn, if_exists='append', index=False)
+    df.to_sql(name = 'main_news2', con = conn, if_exists='replace', index=False)
 except Exception as e:
     print(e)
 finally:
