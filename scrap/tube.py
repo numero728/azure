@@ -39,7 +39,6 @@ try:
             'n':thumbnail,
             'v':video_url
         } )
-    youtube_list
 
     import pandas as pd
     import pymysql
@@ -72,9 +71,6 @@ finally:
 
 
 
-
-
-# In[ ]:
 
 
 
