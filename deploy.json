@@ -1,7 +1,7 @@
 {
   "REPO_URL":"https://github.com/numero728/azure",
   "PROJECT_NAME":"azure",
-  "REMOTE_HOST":"Configure",
-  "REMOTE_HOST_SSH":"23.101.132.183",
+  "REMOTE_HOST":"Configure@23.101.132.183",
+  "REMOTE_HOST_SSH":"23.101.132.183:22",
   "REMOTE_USER":"azureuser"
 }
