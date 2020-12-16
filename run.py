@@ -7,4 +7,4 @@ def main():
     return 'Test'
 
 if __name__=='__main__':
-    app.run(debug=true)
+    app.run(debug=True)
