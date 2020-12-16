@@ -27,7 +27,6 @@ try:
         title  = target.get_attribute('title')
         thumbnail = video.find_element_by_id('img').get_attribute('src')
         video_url = target.get_attribute('href')
-        print( title, thumbnail, video_url )
     youtube_list = list()
     for video in videos[:20]:  
         target    = video.find_element_by_id('video-title')
