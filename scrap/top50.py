@@ -35,7 +35,7 @@ try:
     db_url=f"{dialect}+{db_driver}://{username}:{password}@{host}:{port}/{database}"
     engine=create_engine(db_url)
     conn=engine.connect()
-    data.to_sql('scrap_meta',conn,if_exists='replace',index=False)
+    data.to_sql('scrap_meta',conn,if_exists='append',index=False)
 except Exception as e:
     print(e)
 finally:
