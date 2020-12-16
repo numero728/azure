@@ -1,7 +1,7 @@
 {
-  "REPO_URL":"https://github.com/numero728/miniproject",
+  "REPO_URL":"https://github.com/numero728/azure",
   "PROJECT_NAME":"miniproject",
-  "REMOTE_HOST":"ec2-52-79-235-233.ap-northeast-2.compute.amazonaws.com",
-  "REMOTE_HOST_SSH":"52.79.235.233",
-  "REMOTE_USER":"ubuntu"
+  "REMOTE_HOST":"azureuser@23.101.132.183",
+  "REMOTE_HOST_SSH":"23.101.132.183",
+  "REMOTE_USER":"azureuser"
 }
