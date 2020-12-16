@@ -56,7 +56,7 @@ try:
     db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
     engine = create_engine(db_url, encoding = 'utf8')
     conn = engine.connect()
-    df.to_sql(name = 'youtube', con = conn, if_exists ='replace',index = False)
+    df.to_sql(name = 'youtube', con = conn, if_exists ='append',index = False)
 except Exception as e:
     print(e)
 finally:
