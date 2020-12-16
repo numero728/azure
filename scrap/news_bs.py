@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import html5lib
 import requests
 
-conn=0
 try:
     target_site = 'https://finance.naver.com/news/'
     res = requests.get(target_site)

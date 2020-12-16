@@ -1,11 +1,16 @@
 from selenium import webdriver as wd
+from selenium.webdriver.chrome.options import Options
 import platform
 import time
 import urllib
 import os
 
 try:
-    driver = wd.Chrome('azure/scrap/chromedriver.exe')
+    options=Options
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--deisable-dev-shm-usage')
+    driver = wd.Chrome(executable_path='/usr/local/bin/chromedriver', chrome_options=options)
     keyword = urllib.parse.quote('주식') 
     target_site = f'https://www.youtube.com/results?search_query={keyword}&sp=CAMSBAgCEAE%253D'
     driver.get( target_site )
