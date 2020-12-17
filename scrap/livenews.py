@@ -40,7 +40,6 @@ import pandas as pd
 import pymysql
 import sqlalchemy
 from sqlalchemy import create_engine
-import pandas.io.sql as pSql
 
 protocal = 'mysql+pymysql'
 user     = 'admin'
