@@ -12,6 +12,7 @@ prefs={"profile.default_content_settings.popups": 0,
 options.add_experimental_option('prefs',prefs)
 options.add_argument('--headlss')
 options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--single-process')
 options.add_argument('--no-sandbox')
 driver=wd.Chrome(executable_path='/usr/local/bin/chromedriver',chrome_options=options)
 driver.get('http://marketdata.krx.co.kr/contents/MKD/03/0301/03010000/MKD03010000.jsp')
