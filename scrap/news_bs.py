@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import html5lib
 import requests
+from datetime import datetime
 
-
+timestamp=datetime.now().strftime('%Y-%m-%d-%H:%M')
 target_site = 'https://finance.naver.com/news/'
 res = requests.get(target_site)
 soup = BeautifulSoup(res.text, 'html5lib')
@@ -27,6 +28,7 @@ port = 3306
 database = 'yaneodoo'
 db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
 df = pd.DataFrame(results)
+df['meta']=timestamp
 engine = create_engine(db_url, encoding = 'utf8')
 try:
     conn = engine.connect()
