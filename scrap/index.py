@@ -3,9 +3,11 @@ from selenium.webdriver.chrome.options import Options
 import requests
 import time
 import pandas as pd
+import os
+path='/home/azureuser/azure/scrap/file'
 options=Options()
 prefs={"profile.default_content_settings.popups": 0,
-        "download.default_directory":r"/home/azureuser/azure/scrap/file",
+        "download.default_directory":path,
         "directory_upgrade": True}
 options.add_experimental_option('prefs',prefs)
 options.add_argument('--headlss')
@@ -24,7 +26,9 @@ for btn in btns:
     else:
         continue
 
-df=pd.read_csv('/home/azureuser/azure/scrap/data.csv')
+df=pd.read_csv(path+'data.csv')
+if os.path.isfile(path+'data.csv'):
+    os.remove(path+'data.csv')
 df=df.iloc[:,2:]
 del df['null.2']
 from sqlalchemy import create_engine
