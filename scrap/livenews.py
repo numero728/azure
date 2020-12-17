@@ -5,8 +5,8 @@ import requests
 from datetime import datetime
 
 
-
-now_date = datetime.now().strftime("%Y-%m-%d-%H:%M")
+stamp=datetime.now().strftime("%Y-%m-%d-%H:%M")
+now_date = datetime.now().strftime("%Y-%m-%d")
 # print(now_date)
 
 target_site = f'https://finance.naver.com/news/mainnews.nhn?date={now_date}'
@@ -34,8 +34,6 @@ for news in main_news:
         }
     results.append(dic)
 
-
-
 import pandas as pd
 import pymysql
 import sqlalchemy
@@ -51,7 +49,7 @@ port = 3306
 database = 'yaneodoo'
 db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
 df = pd.DataFrame(results)
-
+df['stamp']=stamp
 
 try:
     engine = create_engine(db_url, encoding = 'utf8')

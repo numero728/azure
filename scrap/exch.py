@@ -31,7 +31,6 @@ for tr in soup.select('tbody > tr'):
         ,'USD_rate': tr.select_one('td:nth-of-type(7)').string.strip()
     }
     results.append(dic)
-results
 
 
 
