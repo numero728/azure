@@ -43,7 +43,7 @@ database = 'scrap_data'
 db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
 eng=create_engine(db_url)
 conn=eng.connect()
-meta=datetime.now().strftime('%Y-%m-%d-%H:%M')
-df['meta']=meta
+# meta=datetime.now().strftime('%Y-%m-%d-%H:%M')
+# df['meta']=meta
 df.to_sql('market_index',con=conn,if_exists='replace',index=False)
 conn.close()

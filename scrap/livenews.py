@@ -5,7 +5,7 @@ import requests
 from datetime import datetime
 
 
-stamp=datetime.now().strftime("%Y-%m-%d-%H:%M")
+# stamp=datetime.now().strftime("%Y-%m-%d-%H:%M")
 now_date = datetime.now().strftime("%Y-%m-%d")
 # print(now_date)
 
@@ -49,7 +49,7 @@ port = 3306
 database = 'yaneodoo'
 db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
 df = pd.DataFrame(results)
-df['stamp']=stamp
+# df['stamp']=stamp
 
 try:
     engine = create_engine(db_url, encoding = 'utf8')

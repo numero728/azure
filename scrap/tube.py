@@ -43,7 +43,6 @@ try:
     import pandas as pd
     import pymysql
     df = pd.DataFrame(youtube_list)
-    df['meta']=datetime.now().strftime('%Y-%m-%d-%H:%M')
 
     from sqlalchemy import create_engine
     import pandas.io.sql as pSql
