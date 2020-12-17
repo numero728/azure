@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 
-now_date = datetime.today().strftime("%Y-%m-%d")
+now_date = datetime.now().strftime("%Y-%m-%d-%H:%M")
 # print(now_date)
 
 target_site = f'https://finance.naver.com/news/mainnews.nhn?date={now_date}'
