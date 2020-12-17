@@ -40,6 +40,8 @@ import pandas as pd
 import pymysql
 import sqlalchemy
 from sqlalchemy import create_engine
+import pandas.io.sql as pSql
+
 
 protocal = 'mysql+pymysql'
 user     = 'admin'
@@ -54,7 +56,7 @@ df = pd.DataFrame(results)
 try:
     engine = create_engine(db_url, encoding = 'utf8')
     conn = engine.connect()
-    df.to_sql(name = 'main_news3', con = conn, if_exists='replace', index=False)
+    df.to_sql(name = "main_news3", con = conn, if_exists='replace', index=False)
 except Exception as e:
     print(e)
 finally:
