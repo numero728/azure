@@ -4,7 +4,8 @@ import requests
 import time
 import pandas as pd
 import os
-path='/home/azureuser/azure/scrap/file'
+# path='/home/azureuser/azure/scrap/file'
+path=r'C:\Users\master25\Desktop\nver\khk_azure\azure\scrap'
 options=Options()
 prefs={"profile.default_content_settings.popups": 0,
         "download.default_directory":path,
@@ -14,7 +15,9 @@ options.add_argument('--headlss')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--single-process')
 options.add_argument('--no-sandbox')
-driver=wd.Chrome(executable_path='/usr/local/bin/chromedriver',chrome_options=options)
+# driver=wd.Chrome(executable_path='/usr/local/bin/chromedriver',chrome_options=options)
+driver=wd.Chrome(executable_path='chromedriver.exe',chrome_options=options)
+
 driver.get('http://marketdata.krx.co.kr/contents/MKD/03/0301/03010000/MKD03010000.jsp')
 time.sleep(10)
 btns=driver.find_elements_by_css_selector('.design-center button')

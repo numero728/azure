@@ -55,8 +55,8 @@ db_url = f'{protocal}://{user}:{password}@{domain}:{port}/{database}'
 
 from datetime import datetime
 df = pd.DataFrame(results)
-# stamp=datetime.now().strftime('%Y-%m-%d-%H:%M')
-# df['meta']=stamp
+stamp=datetime.now().strftime('%Y-%m-%d-%H:%M')
+df['meta']=stamp
 engine = create_engine(db_url, encoding = 'utf8')
 conn = engine.connect()
 df.to_sql(name = 'exchange_rate', con = conn, if_exists='replace', index=False)
